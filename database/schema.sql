@@ -1,23 +1,32 @@
-CREATE TABLE CUSTOMER
-(
-  cm_id INT NOT NULL AUTO_INCREMENT,
-  cm_email INT NOT NULL,
-  date_of_birth INT NOT NULL,
-  PRIMARY KEY (cm_id)
-);
+CREATE TABLE IF NOT EXISTS `customer` (
+  `cm_id` INT NOT NULL,
+  `first_name` VARCHAR(45) NULL,
+  `middle_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  `cm_email` VARCHAR(45) NOT NULL,
+  `cm_mobile_phone_num` VARCHAR(45) NULL,
+  `cm_landline_phone_num` VARCHAR(45) NULL,
+  `date_of_birth` DATE NULL,
+  `cm_home_address_name` VARCHAR(45) NULL,
+  `cm_home_address_num` VARCHAR(45) NULL,
+  `cm_home_address_state` VARCHAR(45) NULL,
+  `cm_home_address_country` VARCHAR(45) NULL,
+  PRIMARY KEY (`cm_id`));
 
-CREATE TABLE INVOICE
-(
-  invoice_id INT NOT NULL,
-  type INT NOT NULL,
-  invoice_desc INT NOT NULL,
-  discount INT NOT NULL,
-  VAT INT NOT NULL,
-  Tax_Registration_Number INT NOT NULL,
-  cm_id INT NOT NULL,
-  PRIMARY KEY (invoice_id),
-  FOREIGN KEY (cm_id) REFERENCES CUSTOMER(cm_id)
-);
+CREATE TABLE IF NOT EXISTS `invoice` (
+  `invoice_id` INT NOT NULL,
+  `type_of_id` VARCHAR(45) NULL,
+  `invoice_desc` VARCHAR(45) NULL,
+  `discount` VARCHAR(45) NULL,
+  `VAT` VARCHAR(45) NULL,
+  `Tax_Registration_Number` VARCHAR(45) NULL,
+  `customer_cm_id` INT NOT NULL,
+  PRIMARY KEY (`invoice_id`, `customer_cm_id`),
+  CONSTRAINT `fk_invoice_customer`
+    FOREIGN KEY (`customer_cm_id`)
+    REFERENCES `test`.`customer` (`cm_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 
 CREATE TABLE RESERVATION
 (

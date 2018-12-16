@@ -15,6 +15,10 @@
                     @endif
 
                     You are logged in!
+
+                    {{
+                        $customers
+                    }}
                 </div>
             </div>
         </div>
