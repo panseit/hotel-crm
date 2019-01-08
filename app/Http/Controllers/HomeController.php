@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\customer;
+use App\Customer;
 
 class HomeController extends Controller
 {
@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $customers = customer::all(); 
+        $customers = Customer::all(); 
         return view('home' , ['customers' => $customers]);
         
         
