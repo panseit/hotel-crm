@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Customer;
+use App\Reservation;
 
-class HomeController extends Controller
+class ReservationsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all(); 
-        return view('home' , ['customers' => $customers]);
+        $reservations = Reservation::all(); 
+        return view('reservations' , ['reservations' => $reservations]);
         
         
     }
