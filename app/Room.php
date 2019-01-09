@@ -12,4 +12,12 @@ class Room extends Model
      * @var string
      */
     protected $table = 'rooms';
+
+    /**
+     * Get the category of room
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\RoomCategory', 'room_category', 'category_id');
+    }
 }
