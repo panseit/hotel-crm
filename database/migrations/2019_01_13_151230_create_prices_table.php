@@ -14,9 +14,8 @@ class CreatePricesTable extends Migration
     public function up()
     {
         Schema::create('prices', function (Blueprint $table) {
-            $table->integer('id');
-            $table->primary('id');
-            $table->integer('room_category_id');
+            $table->increments('id');
+            $table->integer('room_category_id')->unsigned();
             $table->string('season');
             $table->double('value', 8, 2);
         });

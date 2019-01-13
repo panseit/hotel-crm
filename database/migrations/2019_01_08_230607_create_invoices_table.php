@@ -14,10 +14,11 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->integer('invoice_id');
-            $table->primary('invoice_id');
-            $table->integer('reservation_id');
-            $table->integer('customer_id');
+            $table->increments('invoice_id');
+            // Foreign keys and referenced primary keys must have same datype
+            // by default increments = integer()->unsigned()
+            $table->integer('reservation_id')->unsigned();
+            $table->integer('customer_id')->unsigned();
             // timologio i apodeiksi
             $table->string('type')->nullable();
             $table->string('invoice_desc')->nullable();

@@ -14,8 +14,7 @@ class CreateRoomCategory extends Migration
     public function up()
     {
         Schema::create('room_categories', function (Blueprint $table) {
-            $table->integer('category_id');
-            $table->primary('category_id');
+            $table->increments('category_id');
             $table->string('room_name');
             $table->string('category_desc');
         });

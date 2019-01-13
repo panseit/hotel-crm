@@ -14,7 +14,7 @@ class DefineRelationships extends Migration
     public function up()
     {
         Schema::table('rooms', function (Blueprint $table) {
-            $table->foreign('room_category')->references('category_id')->on('room_categories')->onDelete('cascade');
+            $table->foreign('room_category_id')->references('category_id')->on('room_categories')->onDelete('cascade');
         });
         Schema::table('prices', function (Blueprint $table) {
             $table->foreign('room_category_id')->references('category_id')->on('room_categories')->onDelete('cascade');
@@ -47,6 +47,6 @@ class DefineRelationships extends Migration
      */
     public function down()
     {
-        //
+        Schema::disableForeignKeyConstraints();
     }
 }
