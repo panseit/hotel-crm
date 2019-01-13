@@ -14,7 +14,17 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('invoice_id');
+            $table->primary('invoice_id');
+            $table->integer('reservation_id');
+            $table->integer('customer_id');
+            $table->string('type')->nullable();
+            $table->string('invoice_desc')->nullable();
+            $table->integer('vat');
+            $table->integer('discount');
+            $table->double('amount', 8, 2);
+            $table->string('tax_registration_number');
+            $table->enum('payment_method', ['cash', 'card', 'other']);
             $table->timestamps();
         });
     }

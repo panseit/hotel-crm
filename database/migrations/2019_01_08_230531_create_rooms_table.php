@@ -26,11 +26,6 @@ class CreateRoomsTable extends Migration
             $table->string('room_selling_point');
             $table->timestamps();
         });
-
-        Schema::table('rooms', function (Blueprint $table) {
-            // Foreign keys
-            $table->foreign('room_category')->references('category_id')->on('room_categories');
-        });
     }
 
     /**
