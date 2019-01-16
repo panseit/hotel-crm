@@ -4,16 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RoomCategory extends Model
+class Price extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'room_categories';
+    protected $table = 'prices';
 
     public $timestamps = false;
-
-    protected $primaryKey = 'category_id';
 }
