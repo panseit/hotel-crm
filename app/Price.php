@@ -12,4 +12,6 @@ class Price extends Model
      * @var string
      */
     protected $table = 'prices';
+
+    public $timestamps = false;
 }

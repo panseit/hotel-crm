@@ -12,4 +12,8 @@ class RoomCategory extends Model
      * @var string
      */
     protected $table = 'room_categories';
+
+    public $timestamps = false;
+
+    protected $primaryKey = 'category_id';
 }
