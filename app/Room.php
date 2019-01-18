@@ -13,6 +13,8 @@ class Room extends Model
      */
     protected $table = 'rooms';
 
+    public $timestamps = false;
+
     /**
      * Get the category of room
      */
