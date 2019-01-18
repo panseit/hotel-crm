@@ -12,4 +12,6 @@ class Invoice extends Model
      * @var string
      */
     protected $table = 'invoices';
+
+    public $timestamps = false;
 }

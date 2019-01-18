@@ -4,11 +4,6 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
         // Ask for db migration refresh, default is no
@@ -22,8 +17,13 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UsersTableSeeder::class,
-            PricesTableSeeder::class,
-            RoomCategoriesTableSeeder::class
+            CustomersTableSeeder::class,
+            InvoicesTableSeeder::class,
+            ReservationsTableSeeder::class,
+            ServicesTableSeeder::class,
+            RoomsTableSeeder::class,
+            RoomCategoriesTableSeeder::class,
+            PricesTableSeeder::class
         ]);
 
 

@@ -12,4 +12,6 @@ class Reservation extends Model
      * @var string
      */
     protected $table = 'reservations';
+    
+    public $timestamps = false;
 }
