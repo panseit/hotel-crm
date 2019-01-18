@@ -22,7 +22,7 @@
                             @foreach ($customers as $customer)
                                 <tr>
                                     <th scope="row">{{ $customer->customer_id }}</th>
-                                    <td>{{ $customer->category->first_name }}</td>
+                                    <td>{{ $customer->first_name }}</td>
                                     <td>{{ $customer->last_name }}</td>
                                     <td>{{ $customer->address_line1 }}, {{ $customer->address_line2 }}</td>
                                     <td>{{ $customer->phone_number }}</td>

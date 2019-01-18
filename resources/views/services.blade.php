@@ -13,21 +13,21 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Reservation number</th>
-                                <th scope="col">Start date</th>
-                                <th scope="col">End date</th>
-                                <th scope="col">Adults</th>
-                                <th scope="col">Children</th>
+                                <th scope="col">Service Name</th>
+                                <th scope="col">Service Type</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($services as $service)
                                 <tr>
                                     <th scope="row">{{ $service->service_id }}</th>
-                                    <td>{{ $service->category->reservation_id }}</td>
-                                    <td>{{ $service->check_in_date }}</td>
-                                    <td>{{ $service->check_out_date }}</td>
-                                    <td>{{ $service->max_adults }}</td>
-                                    <td>{{ $service->max_children }}</td>
+                                    <td>{{ $service->reservation_id }}</td>
+                                    <td>{{ $service->service_name }}</td>
+                                    <td>{{ $service->service_type }}</td>
+                                    <td>{{ $service->service_desc }}</td>
+                                    <td>{{ $service->service_price }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

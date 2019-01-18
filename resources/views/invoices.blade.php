@@ -12,22 +12,22 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">invoice category</th>
-                                <th scope="col">Start date</th>
-                                <th scope="col">End date</th>
-                                <th scope="col">Adults</th>
-                                <th scope="col">Children</th>
+                                <th scope="col">reservation id</th>
+                                <th scope="col">customer id</th>
+                                <th scope="col">Invoice Type</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Payment Method</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($invoices as $invoice)
                                 <tr>
-                                    <th scope="row">{{ $invoice->invoice_number }}</th>
-                                    <td>{{ $invoice->category->invoice_name }}</td>
-                                    <td>{{ $invoice->check_in_date }}</td>
-                                    <td>{{ $invoice->check_out_date }}</td>
-                                    <td>{{ $invoice->max_adults }}</td>
-                                    <td>{{ $invoice->max_children }}</td>
+                                    <th scope="row">{{ $invoice->invoice_id }}</th>
+                                    <td>{{ $invoice->reservation_id }}</td>
+                                    <td>{{ $invoice->customer_id }}</td>
+                                    <td>{{ $invoice->type }}</td>
+                                    <td>{{ $invoice->amount }}</td>
+                                    <td>{{ $invoice->payment_method }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
