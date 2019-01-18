@@ -36,5 +36,34 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Room Categories</div>
+
+                <div class="card-body">
+                <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($roomCategories as $roomCategory)
+                                <tr>
+                                    <th scope="row">{{ $roomCategory->category_id }}</th>
+                                    <td>{{ $roomCategory->room_name }}</td>
+                                    <td>{{ $roomCategory->category_desc }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
