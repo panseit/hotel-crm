@@ -14,4 +14,6 @@ class Reservation extends Model
     protected $table = 'reservations';
     
     public $timestamps = false;
+
+    protected $primaryKey = 'reservation_id';
 }

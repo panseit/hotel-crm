@@ -4,8 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Service::class, function (Faker $faker) {
     return [
-        'service_id' => $faker->randomDigitNotNull,
-        'reservation_id' => factory(App\Reservation::class, 1)->create()->first()->category_id,
+        'reservation_id' => App\Reservation::inRandomOrder()->get()->first()->reservation_id,
         'service_name' => $faker->randomElement(['Basic', 'Luxury']),
         'service_type' => $faker->randomElement(['Room Service', 'Cinema', 'Spa', 'Gym']),
         'service_desc' => $faker->sentence,

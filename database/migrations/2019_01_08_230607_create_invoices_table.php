@@ -20,7 +20,7 @@ class CreateInvoicesTable extends Migration
             $table->integer('reservation_id')->unsigned();
             $table->integer('customer_id')->unsigned();
             // timologio i apodeiksi
-            $table->string('type')->nullable();
+            $table->enum('type', ['Credit memo', 'Pro forma invoice', 'Interim invoice']);
             $table->string('invoice_desc')->nullable();
             $table->integer('vat');
             $table->integer('discount');

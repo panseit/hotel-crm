@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableSeeder::class,
             CustomersTableSeeder::class,
-            InvoicesTableSeeder::class,
+            RoomCategoriesTableSeeder::class,
             ReservationsTableSeeder::class,
+            InvoicesTableSeeder::class,
             ServicesTableSeeder::class,
             RoomsTableSeeder::class,
-            RoomCategoriesTableSeeder::class,
             PricesTableSeeder::class
         ]);
 
