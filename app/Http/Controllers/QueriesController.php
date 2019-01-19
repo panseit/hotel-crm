@@ -119,34 +119,40 @@ class QueriesController extends Controller
         DB::beginTransaction();
         // find empty rooms
         $emptyRooms = $this->query6($category);
-        
-        $checkInDate = '2019-02-11 20:36:01';
-        $checkOutDate = '2019-02-20 20:36:01';
-        $customer_id=34;
 
-        // reserve room
-        DB::update('
-            UPDATE rooms
-            SET check_in_date=?, check_out_date=?
-            WHERE room_number=?
-        ', [$checkInDate, $checkOutDate, $emptyRooms[0]->room_number]);
+        if (count($emptyRooms) != 0) {
+            $checkInDate = '2019-02-11 20:36:01';
+            $checkOutDate = '2019-02-20 20:36:01';
+            $customer_id=34;
 
-        // create reservation and retrieve ID
-        DB::insert('
-            INSERT INTO reservations
-            (room_category_id, customer_id, start_date, end_date, num_adults, num_children) 
-            VALUES (?, ?, ?, ?, ?, ?)
-        ', [$emptyRooms[0]->room_category_id, $customer_id, $checkInDate, $checkOutDate, 2, 2]);
-        $rID = DB::getPdo()->lastInsertId();
+            // reserve room
+            DB::update('
+                UPDATE rooms
+                SET check_in_date=?, check_out_date=?
+                WHERE room_number=?
+            ', [$checkInDate, $checkOutDate, $emptyRooms[0]->room_number]);
 
-        // Retrieve created reservation
-        $reservation = DB::select('
-            SELECT *
-            FROM reservations
-            WHERE reservation_id='. $rID .'
-        ');
-        DB::commit();
-        return $reservation;
+            // create reservation and retrieve ID
+            DB::insert('
+                INSERT INTO reservations
+                (room_category_id, customer_id, start_date, end_date, num_adults, num_children) 
+                VALUES (?, ?, ?, ?, ?, ?)
+            ', [$emptyRooms[0]->room_category_id, $customer_id, $checkInDate, $checkOutDate, 2, 2]);
+            $rID = DB::getPdo()->lastInsertId();
+
+            // Retrieve created reservation
+            $reservation = DB::select('
+                SELECT *
+                FROM reservations
+                WHERE reservation_id='. $rID .'
+            ');
+            DB::commit();
+            return $reservation;
+        } else {
+            return [
+                "message" => "no rooms available"
+            ];
+        }
     }
 
     /**
