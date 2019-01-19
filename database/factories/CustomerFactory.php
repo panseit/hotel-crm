@@ -3,7 +3,9 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Customer::class, function (Faker $faker) {
+    
     return [
+        'customer_id' => factory(App\User::class, 1)->create()->first()->id,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'middle_name' => $faker->name,
