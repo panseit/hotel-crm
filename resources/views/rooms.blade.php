@@ -23,7 +23,7 @@
                             @foreach ($rooms as $room)
                                 <tr>
                                     <th scope="row">{{ $room->room_number }}</th>
-                                    <td>{{ $room->room_name }}</td>
+                                    <td>{{ App\RoomCategory::where('category_id', $room->room_category_id)->get()->first()->room_name }}</td>
                                     <td>{{ $room->check_in_date }}</td>
                                     <td>{{ $room->check_out_date }}</td>
                                     <td>{{ $room->max_adults }}</td>
