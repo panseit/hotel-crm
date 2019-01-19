@@ -12,7 +12,7 @@ $factory->define(App\Reservation::class, function (Faker $faker) {
         'customer_id' => App\Customer::first()->customer_id,
         'start_date' => $startingDate,
         'end_date' => $endingDate->format($dateTimeFormat),
-        'num_adults' => $faker->randomDigit,
-        'num_children' => $faker->randomDigit
+        'num_adults' => $faker->numberBetween(1, 4),
+        'num_children' => $faker->numberBetween(0, 2)
     ];
 });
