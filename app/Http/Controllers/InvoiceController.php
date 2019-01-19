@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Room;
-use App\RoomCategory;
+use App\Invoice;
 
-class RoomsController extends Controller
+class InvoiceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,11 +24,9 @@ class RoomsController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all(); 
-        $roomCategories = RoomCategory::all();
-        return view('rooms' , [
-            'rooms' => $rooms,
-            'roomCategories' => $roomCategories
+        $invoices = Invoice::all();
+        return view('invoices' , [
+            'invoices' => $invoices
         ]);       
     }
 }

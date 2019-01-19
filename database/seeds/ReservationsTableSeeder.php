@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PricesTableSeeder extends Seeder
+class ReservationsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
