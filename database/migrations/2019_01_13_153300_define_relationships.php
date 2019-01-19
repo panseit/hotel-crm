@@ -23,8 +23,8 @@ class DefineRelationships extends Migration
             $table->foreign('customer_id')->references('id')->on('users')->onDelete('cascade');
         });
         // Reservation reserves room number
-        Schema::table('reservations', function (Blueprint $table) {
-            $table->foreign('room_category_id')->references('category_id')->on('room_categories')->onDelete('cascade');
+        Schema::table('rooms', function (Blueprint $table) {
+            $table->foreign('reservation_id')->references('reservation_id')->on('reservations')->onDelete('cascade');
         });
         Schema::table('services', function (Blueprint $table) {
             $table->foreign('reservation_id')->references('reservation_id')->on('reservations')->onDelete('cascade');

@@ -9,6 +9,7 @@ $factory->define(App\Room::class, function (Faker $faker) {
     $endingDate->setTimestamp(strtotime('+1 Week', $startingDate->getTimestamp()));
     return [
         'room_number' => $faker->unique()->word,
+        'reservation_id' => App\Reservation::inRandomOrder()->get()->first()->reservation_id,
         'room_category_id' => App\RoomCategory::inRandomOrder()->get()->first()->category_id,
         'max_adults' => $faker->numberBetween(1, 4),
         'max_children' => $faker->numberBetween(0, 2),
