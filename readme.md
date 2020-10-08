@@ -1,7 +1,7 @@
-Hotel CRM
-=========
+Hotel CRM using th Laravel Framework
+====================================
 
-Project for the course "Databases" (ECEC901 - FIELD OF SPECIALISATION: COMPUTERS) @ University of Patras
+This project was completed during the course "Databases" (ECEC9011/ECEC9012 - FIELD OF SPECIALISATION: COMPUTERS) @ University of Patras
 
 Team Members
 * Alexios Karadimos (https://alexkaradimos.azurewebsites.net/)
