@@ -1,5 +1,5 @@
-Hotel CRM using th Laravel Framework
-====================================
+Hotel CRM using the Laravel Framework
+=====================================
 
 This project was completed during the course "Databases" (ECEC9011/ECEC9012 - FIELD OF SPECIALISATION: COMPUTERS) @ University of Patras
 
